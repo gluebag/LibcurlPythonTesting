@@ -21,7 +21,7 @@ def main():
     client = GlueHttp.GlueHttp()
 
     # setup periodic requester
-    period = tornado.ioloop.PeriodicCallback(periodic_request, 2000, io_loop=loop)
+    period = tornado.ioloop.PeriodicCallback(periodic_request, 500, io_loop=loop)
     period.start()
 
     loop.start()
