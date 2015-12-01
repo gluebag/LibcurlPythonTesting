@@ -1,11 +1,15 @@
 __author__ = 'gluebag'
 
 import GlueHttp
-import time
+import tornado.ioloop
 
 def main():
 
     print 'running main'
+
+    # setup tornado loop
+    loop = tornado.ioloop.IOLoop.instance()
+    loop.set_blocking_log_threshold(0.5)
 
     # setup shared gluehttp
     GlueHttp.GlueHttp.add_client('direct', 10, 10)
@@ -17,10 +21,9 @@ def main():
     client = GlueHttp.GlueHttp()
     client.Get(url, get_callback)
 
+    loop.start()
+
 def get_callback(response):
     print response
 
 main()
-
-while True:
-    time.sleep(1)
