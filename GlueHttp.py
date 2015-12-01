@@ -6,14 +6,6 @@ import io
 import time
 import os
 import httplib, mimetypes
-import tornado.httpclient
-import tornado.curl_httpclient
-import tornado.ioloop
-import tornado.options
-import tornado.log
-import tornado.concurrent
-import SkypeHelpers
-import multiprocessing
 
 from console_colors import console_colors
 import functools
@@ -171,7 +163,7 @@ class GlueHttp(object):
                                     server = parts[1]
                                     if 'server=' in server:
                                         server = server.split('=')[1]
-                                        SkypeHelpers.SkypeHelpers.track_msn_server(server)
+                                        # SkypeHelpers.SkypeHelpers.track_msn_server(server)
 
         if not ret:
             callback(response)
