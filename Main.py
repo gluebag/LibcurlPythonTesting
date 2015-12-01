@@ -1,6 +1,7 @@
 __author__ = 'gluebag'
 
 import GlueHttp
+import time
 
 def main():
 
@@ -20,3 +21,6 @@ def get_callback(response):
     print response
 
 main()
+
+while True:
+    time.sleep(1)
