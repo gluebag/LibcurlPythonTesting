@@ -1,29 +1,17 @@
 
 __author__ = 'gluebag'
 
-import random
 import io
-import time
-import os
-import httplib, mimetypes
+import mimetypes
 
-from console_colors import console_colors
-import functools
-import Queue
 import random
 import pycurl
-import base64
-import threading
 import netifaces
-import TornadoPool
 import HttpClientsArray
 
 
 from tornado import gen
-from StoppableThread import StoppableThread
 from TornadoCookieJar import TornadoCookieJar
-from pprint import pprint
-import sys
 
 
 class GlueHttp(object):
