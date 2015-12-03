@@ -14,7 +14,7 @@ def main():
     loop.set_blocking_log_threshold(0.5)
 
     # setup shared gluehttp
-    GlueHttp.GlueHttp.add_client('direct', 10, 10)
+    GlueHttp.GlueHttp.add_client('direct', 10, 1)
 
     # setup the single http client
     global client
