@@ -2,6 +2,8 @@ __author__ = 'gluebag'
 
 import GlueHttp
 import tornado.ioloop
+import tornado.log
+import tornado.options
 
 client = None
 
@@ -12,6 +14,11 @@ def main():
     # setup tornado loop
     loop = tornado.ioloop.IOLoop.instance()
     loop.set_blocking_log_threshold(0.5)
+
+    # setup logging
+    tornado_args = ['--log_file_prefix=tornado.log', '--logging=debug']
+    tornado.options.parse_command_line(tornado_args)
+    tornado.log.enable_pretty_logging()
 
     # setup shared gluehttp
     GlueHttp.GlueHttp.add_client('direct', 1, 1)
