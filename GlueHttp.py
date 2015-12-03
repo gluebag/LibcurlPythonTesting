@@ -162,6 +162,7 @@ class GlueHttp(object):
 
         curlObj.setopt(pycurl.SSLVERSION, pycurl.SSLVERSION_TLSv1)
         curlObj.setopt(pycurl.DNS_CACHE_TIMEOUT, 0)
+        curlObj.setopt(pycurl.MAXCONNECTS, 1)
 
         # CLEANUP FORBID REUSE / FRESH_CONNECT
         curlObj.setopt(pycurl.FRESH_CONNECT, 0)
